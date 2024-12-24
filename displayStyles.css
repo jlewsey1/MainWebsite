@@ -21,7 +21,6 @@
 .display-box img {
     width: 100%;
     height: auto;
-    border-bottom: 2px solid #333;
 }
 
 /* Enlarge the entire display box when hovered */
