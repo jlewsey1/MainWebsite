@@ -1,32 +1,10 @@
-from flask import Flask, render_template
-from ebaysdk.finding import Connection
-from dotenv import load_dotenv
-import os
+from flask import Flask
 
-load_dotenv()
-
-api_key = os.getenv('API_KEY')
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    # Fetch the eBay price using your API logic
-    api = Connection(appid=self.api_key, config_file=None)
-    response = api.execute('findItemsAdvanced', {
-        'keywords': 'PSA 10 Japanese Mega Rayquaza EX 095/081',
-        'itemFilter': [
-            {'name': 'MinPrice', 'value': 100},
-            {'name': 'MaxPrice', 'value': 750},
-            {'name': 'MaxEntries', 'value': 10}, # 10 max entries between 100-750
-        ]
-    })
-    
-    # Extract price from the response
-    prices = [float(item.sellingStatus.currentPrice.value) for item in response.reply.searchResult.item]
-    average = int(round(sum(prices)/len(prices)))
-
-    # Pass the price to the HTML template
-    return render_template('index.html', price=average)
+@app.route('/', methods = ["GET"])
+def home():
+    return "<h1>Test Flask App</h1>"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
