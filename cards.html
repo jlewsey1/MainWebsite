@@ -1,0 +1,97 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="displayStyles.css">
+</head>
+<body>
+    <div class="banner">
+        <h1>Cards</h1>
+    </div>
+
+    <!-- Navbar-->
+    <nav class="navbar">
+        <a href="index.html">Home</a> <!-- home page of the website to start the navigation -->
+        <a href="cards.html">Cards</a> <!-- Will have a graded/ungraded section and then set lists -->
+        <a href="boxes.html">Boxes</a> <!-- Will have etb/collection box section-->
+        <a href="other.html">Other</a> <!-- Can put the stuffed animals and pins here or smth-->
+    </nav>
+
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+        <button onclick="toggleTag('Graded')" id="graded-btn">Graded</button>
+        <button onclick="toggleTag('Raw')" id="raw-btn">Raw</button>
+        <button onclick="toggleTag('Japanese')" id="japanese-btn">Japanese</button>
+        <button onclick="clearFilters()">Clear Filters</button>
+    </div>
+
+    <div class="active-tags">
+        <span>Active Tags: </span>
+        <div id="active-tags-list"></div>
+    </div>
+    
+    <!-- Display container -->
+    <div class="display-container">
+        <div class="display-box" data-tag="Graded Japanese">
+            <img src="CardImages/JMRayquazaEX.jpeg" alt="Image description">
+            <div class="description">
+                <p>This is a description of the image above. You can provide more details about the content here.</p>
+            </div>
+            <div class="tags">
+                <span>Graded</span>
+                <span>Japanese</span>
+            </div>
+        </div>
+        <div class="display-box" data-tag="Graded Japanese">
+            <img src="CardImages/JPGroudonEX.jpeg" alt="Image description">
+            <div class="description">
+                <p>This is a description of the image above. You can provide more details about the content here.</p>
+            </div>
+            <div class="tags">
+                <span>Graded</span>
+                <span>Japanese</span>
+            </div>
+        </div>
+        <div class="display-box" data-tag="Graded Japanese">
+            <img src="CardImages/JPKyogreEX.jpeg" alt="Image description">
+            <div class="description">
+                <p>This is a description of the image above. You can provide more details about the content here.</p>
+            </div>
+            <div class="tags">
+                <span>Graded</span>
+                <span>Japanese</span>
+            </div>
+        </div>
+        <div class="display-box" data-tag="Raw">
+            <img src="CardImages/MRayquazaEX.jpeg" alt="Image description">
+            <div class="description">
+                <p>This is a description of the image above. You can provide more details about the content here.</p>
+            </div>
+            <div class="tags">
+                <span>Raw</span>
+            </div>
+        </div>
+        <div class="display-box" data-tag="Raw">
+            <img src="CardImages/PGroudonEX.jpeg" alt="Image description">
+            <div class="description">
+                <p>This is a description of the image above. You can provide more details about the content here.</p>
+            </div>
+            <div class="tags">
+                <span>Raw</span>
+            </div>
+        </div>
+        <div class="display-box" data-tag="Raw">
+            <img src="CardImages/PKyogreEX.jpeg" alt="Image description">
+            <div class="description">
+                <p>This is a description of the image above. You can provide more details about the content here.</p>
+            </div>
+            <div class="tags">
+                <span>Raw</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="functions.js"></script>
+</body>

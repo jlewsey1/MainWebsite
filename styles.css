@@ -1,0 +1,44 @@
+/* styles.css */
+/* J = Japanese, P = Primal, M = Mega EX = EX*/
+
+/* Styling for index.html */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.banner {
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+}
+.banner h1 {
+    font-size: 48px;
+    color: blue;
+    margin: 0;
+}
+
+/* Styling for the navbar for every page */
+.navbar {
+    background-color: #333; /* Dark background color */
+    overflow: hidden; /* Clear floats */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between;
+}
+/* Style the links inside the navbar */
+.navbar a {
+    flex: 1; /* Make each button take equal width */
+    text-align: center; /* Center-align text inside buttons */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    padding: 24px 20px; /* Add padding for click area */
+    background-color: #444; /* Button background color */
+    border-right: 1px solid #555; /* Add a divider between buttons */
+}
+/* Remove the border on the last button */
+.navbar a:last-child {
+    border-right: none;
+}
+/* Change link color on hover */
+.navbar a:hover {
+    background-color: #575757;
+}
