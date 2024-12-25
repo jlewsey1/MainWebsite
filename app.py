@@ -10,8 +10,10 @@ app = Flask(__name__)
 @app.route('/', methods = ["GET"])
 
 def home():
+    load_dotenv()
     api_key = os.getenv('API_KEY')
-    try:
+
+    try: 
         api = Connection(appid=api_key, config_file=None)
         response = api.execute('findItemsAdvanced', {
             'keywords': 'PSA 10 Japanese Mega Rayquaza EX 095/081',
@@ -21,16 +23,18 @@ def home():
                 {'name': 'MaxEntries', 'value': 10}, # 10 max entries between 100-750
             ]
         })
-        #print(response.reply)
-
         prices = [float(item.sellingStatus.currentPrice.value) for item in response.reply.searchResult.item]
-        print("The average is:", int(round(sum(prices)/len(prices))))
+        average = int(round(sum(prices)/len(prices)))
 
     except ConnectionError as e:
-        print(e)
-        print(e.response.dict())
+           print(e)
+           print(e.response.dict())
 
-    return "<h1>Average price is {average}</h1>"
+    return f"<h1>Average price is {average}</h1>"
 
 if __name__ == '__main__':
     app.run()   
+
+# python3 -m venv tester
+# source tester/bin/activate
+# run these to create virtual environment
